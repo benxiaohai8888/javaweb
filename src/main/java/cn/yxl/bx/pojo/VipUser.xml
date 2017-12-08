@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yxl.bx.dao.IVipUserDAO">
+
+	<!--添加会员用户 -->
+	<insert id="doInsert" parameterType="cn.yxl.bx.pojo.VipUser"
+		useGeneratedKeys="true" keyProperty="userid">
+		insert into
+		bx_vip_user(loginname,loginpwd,mobile,user_status)
+		values(#{loginname},#{loginpwd},#{mobile},#{userStatus})
+	</insert>
+
+	<!--会员登录 -->
+	<select id="isLogin" parameterType="cn.yxl.bx.pojo.VipUser"
+		resultType="cn.yxl.bx.pojo.VipUser">
+		select
+		userid,loginname,loginpwd,email,mobile,nickname,address,picpath,user_status
+		as userStatus,areaid
+		from
+		bx_vip_user where loginname=#{loginname} and
+		loginpwd=#{loginpwd}
+	</select>
+
+	<!--根据会员编号查询会员信息 -->
+	<select id="findVipuserByUserid" parameterType="java.lang.Integer"
+		resultType="cn.yxl.bx.pojo.VipUser">
+		select
+		userid,loginname,loginpwd,mobile,user_status
+		as
+		userStatus
+		from
+		bx_vip_user where userid=#{userid}
+	</select>
+
+	<!-- 修改会员信息 -->
+	<update id="updateVipuser" parameterType="cn.yxl.bx.pojo.VipUser">
+		update bx_vip_user
+		<set>
+			<if test="loginpwd!=null">loginpwd=#{loginpwd},</if>
+			<if test="mobile!=null">mobile=#{mobile},</if>
+			<if test="nickname!=null">nickname=#{nickname},</if>
+			<if test="picpath!=null">picpath=#{picpath},</if>
+			<if test="email!=null">email=#{email},</if>
+			<if test="address!=null">address=#{address},</if>
+			<if test="userStatus!=null">user_status=#{userStatus},</if>
+			<if test="area.id!=null">areaid=#{area.id}</if>
+		</set>
+		where userid=#{userid}
+	</update>
+
+
+</mapper>

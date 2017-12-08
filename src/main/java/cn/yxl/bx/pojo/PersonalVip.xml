@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yxl.bx.dao.IPersonalVipDAO">
+
+	<!--添加供应商或者采购商（个人身份） -->
+	<insert id="addUpgradeProviderAndBuyers" parameterType="cn.yxl.bx.pojo.PersonalVip"
+		useGeneratedKeys="true" keyProperty="perid">
+		insert into
+		bx_personal_vip(userid,card,
+		realname,card_pic,address,mobile,email,table_phone,personal_status,
+		style)
+		values(#{vipUsers.userid},#{card},
+		#{realname},#{cardPic},#{address},#{mobile},#{email},#{tablePhone},#{personalStatus},
+		#{style})
+	</insert>
+
+</mapper>

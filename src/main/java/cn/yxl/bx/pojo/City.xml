@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yxl.bx.dao.ICityDAO">
+	<!--会员登录 -->
+	<select id="findCityByFather" parameterType="java.lang.String"
+		resultType="cn.yxl.bx.pojo.City">
+		select
+		id,cityID as
+		cityid,city,father from bx_city where
+		father=#{father}
+	</select>
+
+
+</mapper>

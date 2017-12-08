@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 引入实体映射文件 -->
+	<mappers>
+		<mapper resource="cn/yxl/bx/pojo/AdminUser.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Area.xml" />
+		<mapper resource="cn/yxl/bx/pojo/City.xml" />
+		<mapper resource="cn/yxl/bx/pojo/CompanyVip.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Dept.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Menu.xml" />
+		<mapper resource="cn/yxl/bx/pojo/PersonalVip.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Priviliage.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Province.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Role.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Users.xml" />
+		<mapper resource="cn/yxl/bx/pojo/VipUser.xml" />
+		<mapper resource="cn/yxl/bx/pojo/Slider.xml" />
+	</mappers>
+</configuration>

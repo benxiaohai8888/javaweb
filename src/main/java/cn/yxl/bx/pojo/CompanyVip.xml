@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yxl.bx.dao.ICompanyVipDAO">
+	<!--添加供应商 -->
+	<insert id="addUpgradeProviderAndBuyers" parameterType="cn.yxl.bx.pojo.CompanyVip"
+		useGeneratedKeys="true" keyProperty="comid">
+		insert into
+		bx_company_vip(userid,
+		company_name,address, license_pic,
+		orgnaization_pic, tax_pic,
+		office_pic, food_pic, other_pic_01,
+		other_pic_02, other_pic_03,
+		other_pic_04, other_pic_05, boos_name,operator_name,
+		operator_job,
+		operator_phone, company_status, style)
+		values(#{vipUsers.userid},
+		#{companyName},#{address},
+		#{licensePic}, #{orgnaizationPic},
+		#{taxPic}, #{officePic},
+		#{foodPic}, #{otherPic01},
+		#{otherPic02},
+		#{otherPic03}, #{otherPic04}, #{otherPic05},
+		#{boosName},
+		#{operatorName}, #{operatorJob},
+		#{operatorPhone}, #{companyStatus},
+		#{style})
+	</insert>
+
+
+</mapper>
